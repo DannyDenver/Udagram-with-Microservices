@@ -3,6 +3,7 @@ import { FeedItem } from '../models/FeedItem';
 import * as AWS from '../../../../aws';
 import { NextFunction } from 'connect';
 import * as jwt from 'jsonwebtoken';
+import * as c from '../../../../config/config';
 
 const router: Router = Router();
 
