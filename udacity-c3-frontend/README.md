@@ -1,15 +1,6 @@
 # Udagram Simple Frontend
 
 Udagram is a simple cloud application developed along side the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
-
-The project is split into three parts:
-1. [The Simple Frontend](https://github.com/grutt/udacity-c2-frontend) `This Repo`
-A basic Ionic client web application which consumes the RestAPI Backend. 
-2. [The RestAPI Backend](https://github.com/grutt/udacity-c2-restapi)
-Which is a Node-Express server which can be deployed to a cloud service.
-3. [The Image Filtering Microservice](https://github.com/grutt/udacity-c2-image-filter)
-Which is the final project for the course. It is a Node-Express application which runs a simple Python script to process images.
-
 ***
 
 ## Getting Setup
@@ -48,10 +39,3 @@ ionic build
 ```
 ***
 
-## @TODO
-2. Tasks
-    i. Setup
-        a. Clone, set up protected branches (dev, staging, master)
-        b. NPM, Ionic CLI
-        c. run tests (npm test), identify broken function, fix the function
-        d. write tests for form validation and re-run tests
