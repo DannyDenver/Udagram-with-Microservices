@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    service: backend-filter
+    version: v3
+  name: backend-filter
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: backend-filter
+        version: v3
+    spec:
+      containers:
+      - image: danman28/udagram-filter:latest
+        name: backend-filter 
+        imagePullPolicy: Always  
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"      
+      restartPolicy: Always

@@ -41,6 +41,11 @@ export class ApiService {
             });
   }
 
+  getImage(endpoint): Observable<any> {
+    const url = `${API_HOST}${endpoint}`;
+    return this.http.get(url, { responseType: 'blob' as 'json'});
+  }
+
   post(endpoint, data): Promise<any> {
     const url = `${API_HOST}${endpoint}`;
     return this.http.post<HttpEvent<any>>(url, data, this.httpOptions)

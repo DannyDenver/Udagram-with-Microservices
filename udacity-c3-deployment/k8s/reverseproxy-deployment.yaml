@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     service: reverseproxy
-    version: v2
+    version: v5
   name: reverseproxy
 spec:
   replicas: 2
@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         service: reverseproxy
-        version: v2
+        version: v5
     spec:
       containers:
       - image: danman28/reverseproxy
@@ -23,7 +23,7 @@ spec:
             cpu: "250m"
           limits:
             memory: "1024Mi"
-            cpu: "500m"       
+            cpu: "500m"
         ports:
         - containerPort: 8080
       restartPolicy: Always

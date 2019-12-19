@@ -1,4 +1,4 @@
-version: "3"
+version: "4"
 services:
   reverseproxy:
     build:
@@ -12,7 +12,12 @@ services:
     build:
       context: ../../udacity-c3-restapi-feed  
     image: danman28/udacity-restapi-feed
+  backend_filter:
+    build:
+      context: ../../udagram-filter
+    images: danman28/udagram-filter  
   frontend:
     build:
       context: ../../udacity-c3-frontend  
     image: danman28/udacity-frontend:local
+  

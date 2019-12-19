@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class FeedListComponent implements OnInit, OnDestroy {
   @Input() feedItems: FeedItem[];
+  @Input() src: any;
   subscriptions: Subscription[] = [];
   constructor( private feed: FeedProviderService ) { }
 
@@ -22,6 +23,14 @@ export class FeedListComponent implements OnInit, OnDestroy {
     }));
 
     await this.feed.getFeed();
+
+  // this.subscriptions.push(
+  //   this.feed.filteredImage$.subscribe((img) => {
+  //     this.src = img;
+  //   })
+  // );
+
+  // await this.feed.getFilteredImage();
   }
 
   ngOnDestroy(): void {
@@ -29,6 +38,4 @@ export class FeedListComponent implements OnInit, OnDestroy {
       subscription.unsubscribe();
     }
   }
-
-
 }

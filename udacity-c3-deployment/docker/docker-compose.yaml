@@ -1,15 +1,16 @@
 version: "3"
 services:
   reverseproxy:
-      image: dan/reverseproxy
+      image: danman28/reverseproxy
       ports:
           - 8080:8080
-      restart: always 
+      restart: always
       depends_on:
         - backend-user
-        - backend-feed     
+        - backend-feed
+        - backend-filter
   backend-user:
-    image: dan/udacity-restapi-users
+    image: danman28/udacity-restapi-users
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -23,7 +24,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   backend-feed:
-    image: dan/udacity-restapi-feed
+    image: danman28/udacity-restapi-feed
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -32,11 +33,13 @@ services:
       POSTGRESS_DB: $POSTGRESS_DB 
       POSTGRESS_HOST: $POSTGRESS_HOST 
       AWS_REGION: $AWS_REGION 
-      AWS_PROFILE: $AWS_PROFILE 
+      AWS_PROFILE: $AWS_PROFILE
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
+  backend-filter:
+    image: danman28/udagram-filter:latest
   frontend:
-    image: danman28/udacity-frontend:local
+    image: danman28/udacity-frontend
     ports:
       - "8100:80"

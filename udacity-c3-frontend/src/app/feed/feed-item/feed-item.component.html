@@ -1,9 +1,12 @@
 <ion-card class="photo-card" *ngIf="feedItem">
-  <ion-img [src]="feedItem.url"></ion-img>
-  <!-- <ion-card-header>
-    <ion-card-subtitle>Get Started</ion-card-subtitle>
-    <ion-card-title></ion-card-title>
-  </ion-card-header> -->
+    <ion-button 
+    color="primary" 
+    (click)="filterImage($event)">
+    Filter Image
+  </ion-button>
+  <!-- <img *ngIf="src" [src]="src"> -->
+
+  <ion-img [src]="src ? src : feedItem.url"></ion-img>
   <ion-card-content>
     <p>{{feedItem.caption}}</p>
   </ion-card-content>
