@@ -15,7 +15,7 @@ services:
   backend_filter:
     build:
       context: ../../udagram-filter
-    images: danman28/udagram-filter  
+    image: danman28/udagram-filter  
   frontend:
     build:
       context: ../../udacity-c3-frontend  
